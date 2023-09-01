@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>javaScript Binding Dynamic</title>
+</head>
+
+<body>
+    <div class="Margin">
+        <input id="txtButtonContext" type="text" value="test" onkeyup="TextboxValueChanged()" />
+        <br />
+        <br />
+        <input id="btnAddNewButton" type="button" value="Tilføj knap" onclick="AddNewButton()" />
+        <br />
+        <br /> 
+        
+        <div class="ButtonsAdded">
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="../JavaScriptBindingDynamic.js"></script>
+
+<script type="text/javascript">
+    window.onload = SetupDOMElements();
+</script>
