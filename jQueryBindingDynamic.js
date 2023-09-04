@@ -1,49 +1,4 @@
-﻿// var ButtonAddedCounter = 0;
-// var CurrentButton;
-
-// var txtButtonContext = $("#txtButtonContext");
-// var ButtonAddedClass = $(".ButtonsAdded");
-
-// $("#btnAddNewButton").on('click', function () {
-//     var div = $("<div id='div"+ ButtonAddedCounter +"'></div>");
-//     var Button = $("<input type='button' id='btnDynamic" + (++ButtonAddedCounter).toString() + "' value = 'btnDynamic" + ButtonAddedCounter + "' /> ");
-//     var edit = $("<input type='button' id='btnEdit' value = 'Edit' /> ");
-//     var del = $("<input type='button' class='btnDelete' value = 'Delete' /> ");
-//     div.append(Button);
-//     div.append(edit);
-//     div.append(del);
-//     ButtonAddedClass.append(div);
-//     ButtonAddedClass.append("<br />");
-// });
-
-
-
-
-
-// txtButtonContext.on('input', function () {
-//     CurrentButton.val($(this).val());
-//     txtButtonContext.width(CalculateWidthOnControl(txtButtonContext));
-// });
-
-// function CalculateWidthOnControl(Control_Object) {
-//     ControlWidth = Control_Object.val().length;
-//     return (ControlWidth * 9 + 25);
-// }
-
-// function deleteButton() {
-//     console.log("eeee");
-// }
-
-// $('#div').on('click', '.btnDelete', function ()
-// {
-//     $(this).closest('div').remove();
-
-//     // $(this).parent().remove();
-//     console.log("fff");
-// });
-
-
-var ButtonAddedCounter = 0;
+﻿var ButtonAddedCounter = 0;
 var CurrentButton;
 var CurrentButtonEdit;
 var txtButtonContext = $("#txtButtonContext"); //Text on the buttons.
@@ -62,15 +17,11 @@ $("#btnAddNewButton").on('click', function () {
     console.log(div);
 })
 
-//Button "look", aka. Width and Text.
-txtButtonContext.on('input', function () {
-    CurrentButton.val($(this).val());
-    txtButtonContext.width(CalculateWidthOnControl(txtButtonContext));
-});
 function CalculateWidthOnControl(Control_Object) {
     ControlWidth = Control_Object.val().length;
     return (ControlWidth * 9 + 25);
 }
+
 $(document).on("click", "#btnDelete" , function () {
     console.log("Deleted");
     $(this).closest("div").remove();
@@ -84,13 +35,7 @@ $(document).on("click", "#btnEdit", function(){
     console.log(d.val())
 });
 
-$("#txtButtonContext").on("change", function() {
+$("#txtButtonContext").on("keyup", function() {
     CurrentButtonEdit.val($("#txtButtonContext").val());
+    $("#txtButtonContext").width(CalculateWidthOnControl($("#txtButtonContext")));
 });
-
-// // ButtonAddedClass.delegate("input", "click", function () {
-// //     CurrentButton = $(this);
-// //     var TextToTextField = $(this).val();
-// //     txtButtonContext.val(TextToTextField);
-// //     txtButtonContext.width(CalculateWidthOnControl(txtButtonContext));
-// // });
